@@ -1,0 +1,15 @@
+<html>
+<body>
+<head><title><i>plzzz fill all the details</i></title></head>
+{% include 'header.html' %}
+<form action='/admin_main/' method='post'>
+{%csrf_token%}
+<br>
+name:<input type='text' name='name' required>
+<br><br>
+password:<input type='pass' name='password' required>
+<br><br>
+<input type='submit' value='submit'>
+</form>
+</body>
+</html>

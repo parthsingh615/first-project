@@ -1,0 +1,28 @@
+{%load static%}
+<html>
+    <head><title>Home</title>
+    </head>
+    <body bgcolor=red>
+            {% include 'header.html' %} 
+       <div align='center'>
+	   <img src="{%static '/download.jpg '%}"height=300 width=400> 
+            <font size="20"><h2><u><i>welcome to Greater Noida Search Engine</i></u></h2></font>
+            <form action="/result/" method = 'post'>
+                {%csrf_token%}
+                <input type="text" name="q" > <br>
+               <font size="10"><i>ATM</i></font><input type="radio" name="category" value="Atm" > <br>
+                <font size="10"><i>College</i></font><input type="radio" name="category" value="Collage" > <br>
+              <font size="10"><i> Restaurent</i></font><input type="radio" name="category" value="Restaurent" > <br>
+                <font size="10"><input type="submit" value="Search"><br>
+            </form>
+        </div>
+        <div align = 'center'>
+           <font size="10"> contact no:-9599234615 {{cat}}{{q}}</font>
+    {%for row in rows %}
+        {{row.title}} :
+        {{row.contact}}:
+        {{row.address}}  <br>
+    {%endfor%}
+        </div>
+    </body>
+</html>

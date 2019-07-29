@@ -1,0 +1,24 @@
+<html>
+<body bgcolor=red>
+<head><title><i>plzzz fill information to insert</i></title></head>
+{% include 'header.html' %}
+<form action='/admin_update/' method='post'>
+{%csrf_token%}
+<br>
+Atm:<input type='radio' name='category' value='Atm' required>
+<br><br>
+College:<input type='radio' name='category' value='College required>
+<br><br>
+Restaurant:<input type='radio' name='category' value='Restaurant' required>
+<br><br>
+title:<input type='text' name='title' required>
+<br><br>
+address:<input type='text' name='address' required>
+<br><br>
+contact:<input type='number' name='contact'>
+<br><br>
+<input type='submit' value='add'>
+<input type='reset' value='reset'>
+</form>
+</body>
+</html>
